@@ -1,0 +1,7 @@
+{
+    "name": "snackbar",
+    "integrations": {
+      "capacitor": {}
+    },
+    "type": "react"
+  }

@@ -1,6 +1,6 @@
 {
   "name": "snackbar",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.4",
@@ -8,8 +8,16 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
-    "bootstrap": "^5.2.0",
+    "bootstrap": "^4.4.1",
+    "elegant-icons": "^0.0.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "jquery-nice-select": "^1.1.0",
+    "jquery-ui": "^1.12.1",
     "js-cookie": "^3.0.1",
+    "jwt-decode": "^3.1.2",
+    "mixitup": "^3.3.1",
+    "owl.carousel2": "^2.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
@@ -18,9 +26,11 @@
     "redux": "^4.2.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
+    "slicknav": "^1.0.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "buildstart": "react-scripts build && react-scripts start",
     "start": "react-scripts start",
     "build": "rm -rf ../../backend/SnackBar/build && react-scripts build && cp -r build ../../backend/SnackBar/build",
     "test": "react-scripts test",
@@ -43,5 +53,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "pnotify": "^5.2.0"
   }
 }

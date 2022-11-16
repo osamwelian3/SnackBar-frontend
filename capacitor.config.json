@@ -1,0 +1,8 @@
+{
+    "appId": "io.ionic.snackbar",
+    "appName": "snackbar",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "build",
+    "cordova": {}
+  }
