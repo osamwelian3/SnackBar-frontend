@@ -20,6 +20,11 @@ class HeroSection extends Component {
             $('.hero__categories ul').slideToggle(400);
         });
 
+        /*--------------------------
+            Select
+        ----------------------------*/
+        $("select").niceSelect();
+
     }
 
     componentWillUnmount(){
@@ -39,7 +44,7 @@ class HeroSection extends Component {
                                         <i className="fa fa-bars"></i>
                                         <span>All departments</span>
                                     </div>
-                                    <ul style={this.props.collapse ? {display: 'none'} : undefined}>
+                                    <ul style={this.props.collapse ? {display: 'none', position: 'absolute', left: '0', top: '46px', width: '100%', zIndex: '9', background: '#ffffff'} : undefined}>
                                         <li><a href="#">Fresh Meat</a></li>
                                         <li><a href="#">Vegetables</a></li>
                                         <li><a href="#">Fruit & Nut Gifts</a></li>
@@ -62,6 +67,12 @@ class HeroSection extends Component {
                                                 All Categories
                                                 <span className="arrow_carrot-down"></span>
                                             </div>
+                                            {/* <select className="hero__search__categories">
+                                                <option>All Categories</option>
+                                                <option>Food</option>
+                                                <option>Electronics</option>
+                                                <option>Clothing</option>
+                                            </select> */}
                                             <input type="text" placeholder="What do yo u need?" />
                                             <button type="submit" className="site-btn">SEARCH</button>
                                         </form>
@@ -71,7 +82,7 @@ class HeroSection extends Component {
                                             <i className="fa fa-phone"></i>
                                         </div>
                                         <div className="hero__search__phone__text">
-                                            <h5>+65 11.188.888</h5>
+                                            <h5>+254 796 525626</h5>
                                             <span>support 24/7 time</span>
                                         </div>
                                     </div>

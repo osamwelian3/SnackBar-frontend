@@ -27,6 +27,12 @@ class Navbar extends Component {
     )
 
     componentDidMount(){
+        const { isAuthenticated } = this.props;
+        if(!isAuthenticated){
+            console.log('authstate: ' + isAuthenticated)
+            /* global google */
+            google.accounts.id.prompt();
+        }
         /*------------------
           Preloader
       --------------------*/
@@ -92,6 +98,25 @@ class Navbar extends Component {
             $('ul.mnu li a.active').parent().addClass('active');
         }
 
+        // function copyEvents(source, destination) {
+        //     // Get source events
+        //     var events = source.data('events');
+        
+        //     // Iterate through all event types
+        //     $.each(events, function(eventType, eventArray) {
+        //         // Iterate through every bound handler
+        //         $.each(eventArray, function(index, event) {
+        //             // Take event namespaces into account
+        //             var eventToBind = event.namespace.length > 0
+        //                 ? (event.type + '.' + event.namespace)
+        //                 : (event.type);
+        
+        //             // Bind event
+        //             destination.bind(eventToBind, event.data, event.handler);
+        //         });
+        //     });
+        // }
+
     }
 
     componentWillUnmount(){
@@ -142,9 +167,9 @@ class Navbar extends Component {
                         <ul className='mnu'>
                             <li className=""><NavLink to="/">Home</NavLink></li>
                             <li><NavLink to="/category">Shop</NavLink></li>
-                            <li><Link to="#">Pages</Link>
+                            <li><NavLink to="#">Pages</NavLink>
                                 <ul className="header__menu__dropdown">
-                                    <li><Link to="./shop-details.html">Shop Details</Link></li>
+                                    <li><NavLink to="/product">Shop Details</NavLink></li>
                                     <li><Link to="./shoping-cart.html">Shoping Cart</Link></li>
                                     <li><Link to="./checkout.html">Check Out</Link></li>
                                     <li><Link to="./blog-details.html">Blog Details</Link></li>
@@ -221,9 +246,9 @@ class Navbar extends Component {
                                     <ul className='mnu'>
                                         <li className=""><NavLink to="/">Home</NavLink></li>
                                         <li><NavLink to="/category">Shop</NavLink></li>
-                                        <li><Link to="#">Pages</Link>
+                                        <li><NavLink to="">Pages</NavLink>
                                             <ul className="header__menu__dropdown">
-                                                <li><Link to="./shop-details.html">Shop Details</Link></li>
+                                                <li><NavLink to="/product">Shop Details</NavLink></li>
                                                 <li><Link to="./shoping-cart.html">Shoping Cart</Link></li>
                                                 <li><Link to="./checkout.html">Check Out</Link></li>
                                                 <li><Link to="./blog-details.html">Blog Details</Link></li>

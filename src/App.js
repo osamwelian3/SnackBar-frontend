@@ -24,6 +24,7 @@ import 'jquery-ui/ui/widgets/slider.js';
 import {} from 'slicknav/dist/jquery.slicknav';
 import Footer from './components/footer';
 import CategoriesListing from './containers/catalogue/CategoriesListing';
+import ProductDetails from './containers/catalogue/ProductDetails';
 
 // import {} from './../node_modules/bootstrap/dist/css/bootstrap.css';
 // import {} from './../node_modules/bootstrap/dist/js/bootstrap.js';
@@ -37,10 +38,10 @@ class SocialComponent extends Component {
   state = {  } 
 
   handleCallbackResponse = (response, props=this.props) => {
-    console.log(response)
+    // console.log(response)
     const { socialLogin } = props;
-    var userObject = jwtDecode(response.credential);
-    console.log(userObject);
+    // var userObject = jwtDecode(response.credential);
+    // console.log(userObject);
     socialLogin(response);
   }
 
@@ -51,11 +52,6 @@ class SocialComponent extends Component {
       callback: this.handleCallbackResponse
     });
 
-    const { isAuthenticated } = this.props;
-    if(!isAuthenticated){
-      /* global google */
-      google.accounts.id.prompt();
-    }
   }
 
   render() { 
@@ -66,9 +62,9 @@ class SocialComponent extends Component {
 
 const mapStateToProps = state => ({
   isAuthenticated: state.auth.isAuthenticated
-})
+});
 
-export const Social = connect(null, {socialLogin})(SocialComponent);
+export const Social = connect(mapStateToProps, {socialLogin})(SocialComponent);
 
 class App extends Component {
   state = { 
@@ -102,6 +98,7 @@ class App extends Component {
               <Route path='/' element={<Catalogue />}>
                 <Route index element={<Home />} />
                 <Route path='/category' element={<CategoriesListing />} />
+                <Route path='/product' element={<ProductDetails />} />
               </Route>
               <Route path="/auth" element={<Layout />}>
                 <Route path='/auth/*' element={<Authentication />} />

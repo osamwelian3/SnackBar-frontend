@@ -20,7 +20,9 @@ class LatestProductSection extends Component {
                 <section className="latest-product spad">
                     <div className="container">
                         <div className="row">
-                            <LatestProduct />
+                            <div className="col-lg-4 col-md-6">
+                                <LatestProduct />
+                            </div>
                             <TopRatedProducts />
                             <ReviewProducts />
                         </div>

@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import BreadCrumbSection from '../../components/categoriesListing/BreadCrumbSection';
-import ProductSection from '../../components/categoriesListing/ProductSection';
 import HeroSection from '../../components/heroSection';
+import ItemDetail from '../../components/productDetails/ItemDetail';
 
-class CategoriesListing extends Component {
+class ProductDetails extends Component {
     state = {  } 
     render() { 
         return (
             <>
                 <HeroSection collapse={true} />
-                <BreadCrumbSection title={`Food's Department`} links={[{'Home':'/'}, {'Shop': '/category'}]} />
-                <ProductSection />
+                <BreadCrumbSection title={`Vegetable's Package`} links={[{'Home':'/'}, {'Shop': '/category'}, {'Garlic': '/product'}]}/>
+                <ItemDetail />
             </>
         );
     }
 }
  
-export default CategoriesListing;
+export default ProductDetails;
